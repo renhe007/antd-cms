@@ -1,0 +1,2 @@
+webpackHotUpdate(0,{60:function(e,i,t){i=e.exports=t(152)(),i.push([e.id,"*{margin:0;padding:0}a{text-decoration:none;color:#000}li{list-style:none}.leftmenu{width:200px;border-right:1px solid #e9e9e9}.leftmenu li{height:42px;line-height:42px;font-size:14px;padding-left:24px;padding-right:16px}.leftmenu li:hover{color:blue}.main-app{width:90%;margin:0 auto;margin-top:60px;min-height:400px;border-radius:4px;background:#fff}",""])}});
+//# sourceMappingURL=0.26f8bc6d340bce3fe3cd.hot-update.js.map

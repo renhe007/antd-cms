@@ -1,0 +1,2 @@
+webpackHotUpdate(0,{60:function(i,p,t){p=i.exports=t(152)(),p.push([i.id,"*{margin:0;padding:0}.leftmenu{width:200px}.leftmenu li{border-right:3px solid red;height:42px;line-height:42px;font-size:14px;padding-left:24px;padding-right:16px}.main-app{width:90%;margin:0 auto;margin-top:60px;min-height:400px;border-radius:4px;background:#fff}",""])}});
+//# sourceMappingURL=0.bb4e91eb7a275f73e995.hot-update.js.map
