@@ -4,17 +4,20 @@ var config = require('./webpack.config');
 
 // 相当于通过本地node服务代理请求到了http://cnodejs.org/api
 var proxy = [{
-    path: '/api/*',
-    target: 'https://cnodejs.org',
-    host: 'cnodejs.org'
+    path: '/',
+    target: 'https://localhost:7000',
+    host: '127.0.0.1'
 }];
 
 //启动服务
 var server = new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
-    proxy:proxy,
     historyApiFallback: true,
-    hot: true
+
+    hot: true,
+    host: '127.0.0.1',
+    target: 'https://localhost:4000',
+
 });
 
 //将其他路由，全部返回index.html

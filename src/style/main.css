@@ -10,11 +10,16 @@ li{
   list-style: none;
 }
 body{
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+      font-family: "Microsoft Yahei";
 }
 .leftmenu{
   width:200px;
   border-right: 1px solid #e9e9e9;
+  float: left;
+}
+.main-right{
+  margin-left: 240px;
+  margin-right: 60px;
 }
 .leftmenu li{
   height:42px;
@@ -30,7 +35,31 @@ body{
 .main-app{
   width:90%;
   margin:0 auto;
-  min-height: 400px;
+  min-height: 100%;
   border-radius: 4px;
   background: #ffffff;
+  padding-top:24px;
+}
+.table-select::after{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.table-select{
+  height:120px;
+}
+.table-select li{
+  float:left;
+  padding:8px 12px;
+}
+.table-select li span,.table-select li label{
+  display:inline-block;
+
+}
+.table-select li label{
+  width: 60px;
+  padding-right: 10px;
+  text-align: right;
 }
