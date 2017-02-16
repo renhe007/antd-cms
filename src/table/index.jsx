@@ -3,7 +3,6 @@ import {render} from "react-dom";
 import {Route,Router,browserHistory,IndexRoute,Link} from "react-router"
 import { Input,DatePicker,Select,Button,Table,Icon } from 'antd'
 const Option = Select.Option;
-import 'whatwg-fetch'
 import Promise from 'promise-polyfill';
 import apiUrl from "../config.js"
 
@@ -59,7 +58,7 @@ export default class TablePage extends React.Component{
     console.log(this.state)
     console.log(this.state.name)
     const columns = [{
-      title: '用户名',
+      title: '用户mingtt',
       dataIndex: 'name',
       key: 'name',
       render: text => <a href="#">{text}</a>,

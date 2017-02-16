@@ -1,16 +1,14 @@
 var path = require('path');
 var webpack = require('webpack');
-
+var mainURL = path.resolve(__dirname, './index.jsx')
 module.exports = {
-  entry: [
-    'whatwg-fetch',
-    'webpack-dev-server/client?http://localhost:4000',
-    'webpack/hot/only-dev-server',
-   path.resolve(__dirname, './index.jsx')
- ],
+  entry: {
+    'app': mainURL,
+    "vendor1": ["react", "react-router","antd"],
+ },
   output: {
     path: path.resolve(__dirname, './build'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: "http://localhost:4000/build/"
   },
   module: {
@@ -28,7 +26,18 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.BannerPlugin('This file is created by zhaoda'),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false,
+      },
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ["vendor1"],
+      minChunks: Infinity
+    })
   ],
   resolve:{
     extensions:['','.js','.jsx']
