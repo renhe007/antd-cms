@@ -13,8 +13,8 @@ var proxy = [{
 var server = new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
     historyApiFallback: true,
-
     hot: true,
+    inline:true,
     host: '127.0.0.1',
     target: 'https://localhost:4000',
 

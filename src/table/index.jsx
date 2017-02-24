@@ -33,10 +33,10 @@ export default class TablePage extends React.Component{
       .catch(e => console.log("Oops, error", e))
   }
 
-  onChange(type,date, dateString){
-    console.log(date._d, dateString);
-    this.state[type] = date._d
-    this.setState(this.state)
+  onChange(typ,date, dateString){
+    let obj = {};
+    obj[typ] = date._d;
+     this.setState(obj);
   }
 
   inputOnChange(type,e){
@@ -46,10 +46,6 @@ export default class TablePage extends React.Component{
 
   handleChange(value){
     this.setState({
-      name: this.state.name,
-      dataStart: this.state.dataStart,
-      dataEnd: this.state.dataEnd,
-      mobile: this.state.mobile,
       type:value
     })
   }
@@ -58,7 +54,7 @@ export default class TablePage extends React.Component{
     console.log(this.state)
     console.log(this.state.name)
     const columns = [{
-      title: '用户mingtt',
+      title: '用户',
       dataIndex: 'name',
       key: 'name',
       render: text => <a href="#">{text}</a>,

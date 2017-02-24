@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var mainURL = path.resolve(__dirname, './index.jsx')
 module.exports = {
   entry: {
+    'webpack-dev-server/client?http://localhost:4000':'webpack-dev-server/client?http://localhost:4000',
+    'webpack/hot/dev-server':'webpack/hot/dev-server',
     'app': mainURL,
     "vendor1": ["react", "react-router","antd"],
  },
@@ -27,7 +29,6 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.BannerPlugin('This file is created by zhaoda'),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
       compress: {
@@ -42,8 +43,12 @@ module.exports = {
   resolve:{
     extensions:['','.js','.jsx']
   },
-  devServer:{
-    contentBase:path.join(__dirname,'build')
-  }
+  devServer: {
+    host: '0.0.0.0',
+    port: 4000,
+    historyApiFallback: true,
+    hot: true,
+    progress: true
+  },
 
 };
